@@ -1,12 +1,12 @@
 @extends('akij.layout')
 @section('content')
-    <div>
-        <h2>This Is Main Page</h2>
+    <div class="container" style="background-color: #51a8ff">
+        <h2 style="text-align:center;">This Is Main Page</h2>
     </div>
     <a class="btn btn-primary" href="{{route('akijs.create')}}">Add New Person</a>
     <div class="container">
         <table class="table table-bordered">
-            <tr>
+            <tr style="text-align:center; background-color: #808080;">
                 <th>No</th>
                 <th>Name</th>
                 <th>Email</th>

@@ -39,10 +39,10 @@ class AkijController extends Controller
         $request->validate([
             'full_name'=>'required',
             'email'=>'required',
-            'mobile'=>'required',
+            'mobile'=>'required|min:10',
             'address'=>'required',
-            'user_name'=>'required',
-            'password'=>'required',
+            'user_name'=>'required|min:6',
+            'password'=>'required|min:8',
         ]);
 
         $input=$request->all();
@@ -85,10 +85,10 @@ class AkijController extends Controller
         $request->validate([
             'full_name'=>'required',
             'email'=>'required',
-            'mobile'=>'required',
+            'mobile'=>'required|min:10',
             'address'=>'required',
-            'user_name'=>'required',
-            'password'=>'required',
+            'user_name'=>'required|min:6',
+            'password'=>'required|min:8',
         ]);
 
         $input=$request->all();
