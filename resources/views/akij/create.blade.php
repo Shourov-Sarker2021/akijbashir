@@ -1,7 +1,7 @@
 @extends('akij.layout')
 @section('content')
     <div class="container" style="background-color: #51a8ff">
-        <h2 style="text-align:center;">This Is Form Create Page</h2>
+        <h2 style="text-align:center;">This Is Registration Form Create Page</h2>
     </div>
     <a class="btn btn-primary" href="{{route('akijs.index')}}">Back To Main Page</a>
     <div class="container"style="background-color: #8080c0">
