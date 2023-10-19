@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AkijController;
 use App\Models\Akij;
-
+use App\Http\Controllers\ResturentController;
+use App\Models\Resturent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::resource('akijs', AkijController::class);
+Route::resource('resturent', ResturentController::class);
