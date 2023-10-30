@@ -5,6 +5,8 @@ use App\Http\Controllers\AkijController;
 use App\Models\Akij;
 use App\Http\Controllers\ResturentController;
 use App\Models\Resturent;
+use App\Http\Controllers\LandController;
+use App\Models\Land;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,4 @@ Route::get('/', function () {
 
 Route::resource('akijs', AkijController::class);
 Route::resource('resturent', ResturentController::class);
+Route::resource('land', LandController::class);
