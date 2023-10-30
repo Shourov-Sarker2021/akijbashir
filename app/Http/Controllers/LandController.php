@@ -14,7 +14,8 @@ class LandController extends Controller
      */
     public function index()
     {
-        //
+         $lands=Land::latest()->paginate('10');
+         return view('lands.index',compact('lands'))->with('i',(request('page',1)-1)*5);
     }
 
     /**
@@ -44,7 +45,7 @@ class LandController extends Controller
 
         $input=$request->all();
         Land::create($input);
-        return "Land Create Successfully";
+        return redirect()->route('land.index')->with('success',"Land Create Successfully");
     }
 
     /**
@@ -55,7 +56,7 @@ class LandController extends Controller
      */
     public function show(Land $land)
     {
-        //
+        return view('lands.details',compact('land'));
     }
 
     /**
@@ -66,7 +67,7 @@ class LandController extends Controller
      */
     public function edit(Land $land)
     {
-        //
+        return view('lands.edit',compact('land'));
     }
 
     /**
@@ -78,7 +79,16 @@ class LandController extends Controller
      */
     public function update(Request $request, Land $land)
     {
-        //
+        $request->validate([
+            'land_name'=>'required',
+            'address'=>'required',
+            'owner'=>'required',
+            'country'=>'required',
+        ]);
+
+        $input=$request->all();
+        $land->update($input);
+        return redirect()->route('land.index')->with('success',"Land Update Successfully");
     }
 
     /**
@@ -89,6 +99,7 @@ class LandController extends Controller
      */
     public function destroy(Land $land)
     {
-        //
+        $land->delete();
+        return redirect()->route('land.index')->with('success',"Land Delete Successfully");
     }
 }
