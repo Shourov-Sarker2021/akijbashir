@@ -7,6 +7,8 @@ use App\Http\Controllers\ResturentController;
 use App\Models\Resturent;
 use App\Http\Controllers\LandController;
 use App\Models\Land;
+use App\Http\Controllers\HotelController;
+use App\Models\Hotel;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +27,4 @@ Route::get('/', function () {
 Route::resource('akijs', AkijController::class);
 Route::resource('resturent', ResturentController::class);
 Route::resource('land', LandController::class);
+Route::resource('hotel', HotelController::class);
